@@ -73,11 +73,6 @@ variable "no_proxy" {
   default = ""
 }
 
-variable "preseed_path" {
-  type    = string
-  default = "preseed/preseed.cfg"
-}
-
 variable "template" {
   type    = string
   default = "debian-11.4-amd64"
@@ -86,4 +81,9 @@ variable "template" {
 variable "version" {
   type    = string
   default = "TIMESTAMP"
+}
+
+variable "terraform_version" {
+  type    = string
+  default = "1.2.9"
 }

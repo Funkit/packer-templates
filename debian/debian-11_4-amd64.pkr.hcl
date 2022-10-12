@@ -16,7 +16,6 @@ locals {
     "grub-installer/bootdev=/dev/sda <wait>",
     "<enter><wait>"
   ]
-  build_timestamp = "${formatdate("YYYYMMDDhhmmss", timestamp())}"
   http_directory  = "${path.root}/http"
 }
 
@@ -43,7 +42,7 @@ source "virtualbox-iso" "development_vm" {
   ssh_timeout             = "10000s"
   ssh_username            = "vagrant"
   virtualbox_version_file = ".vbox_version"
-  vm_name                 = "${var.template}"
+  vm_name                 = "${var.template}-${formatdate("YYYYMMDDhhmmss", timestamp())}"
 }
 
 build {
